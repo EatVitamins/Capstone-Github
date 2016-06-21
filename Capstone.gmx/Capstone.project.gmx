@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_lazer</sprite>
     <sprite>sprites\spr_char</sprite>
   </sprites>
   <backgrounds name="background">
@@ -13,6 +14,7 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\obj_lazer</object>
     <object>objects\obj_smile</object>
   </objects>
   <rooms name="rooms">
