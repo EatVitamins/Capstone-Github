@@ -80,7 +80,8 @@ x = max(x,16);
 y = min(y,room_height - 16);
 y = max(y,16);
 
-image_angle = direction;
+image_angle = point_direction(x,y,mouse_x,mouse_y);
+
 
 </string>
           </argument>
@@ -105,7 +106,7 @@ image_angle = direction;
           <argument>
             <kind>1</kind>
             <string>speed += 1;
-direction = 90;
+direction = image_angle;
 </string>
           </argument>
         </arguments>
@@ -129,7 +130,7 @@ direction = 90;
           <argument>
             <kind>1</kind>
             <string>speed += 1;
-direction = 270;
+direction = image_angle - 180;
 </string>
           </argument>
         </arguments>
@@ -153,7 +154,7 @@ direction = 270;
           <argument>
             <kind>1</kind>
             <string>speed += 1;
-direction = 0
+direction = image_angle - 90;
 </string>
           </argument>
         </arguments>
@@ -177,7 +178,7 @@ direction = 0
           <argument>
             <kind>1</kind>
             <string>speed += 1;
-direction = 180;
+direction = image_angle + 90;
 </string>
           </argument>
         </arguments>
