@@ -11,10 +11,10 @@
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_die</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_1</background>
-    <background>background\bg_menu</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts"/>
@@ -24,6 +24,7 @@
     <object>objects\obj_enemy</object>
     <object>objects\obj_cursor</object>
     <object>objects\obj_die</object>
+    <object>objects\obj_fireball</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>

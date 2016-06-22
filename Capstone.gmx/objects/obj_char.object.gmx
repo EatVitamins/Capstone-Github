@@ -45,7 +45,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>chp = 10
+            <string>chp = 10;
+kills = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//timing
 </string>
           </argument>
         </arguments>
@@ -124,10 +148,18 @@ x = max(x,16);
 y = min(y,room_height - 16);
 y = max(y,16);
 
+
 //shooting
-if (mouse_check_button(mb_left) || keyboard_check(vk_space)) {
+if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(vk_space)) {
 if alarm[0] = -1 {
 alarm[0] = 5
+}
+};
+//ability
+if (mouse_check_button_pressed(mb_right) || keyboard_check_pressed(vk_control)) {
+if alarm[2] = -1 {
+instance_create(obj_char.x,obj_char.y,obj_fireball);
+alarm[2] = 60*5;
 }
 };
 
@@ -164,6 +196,35 @@ if (alarm[1] = -1) {
 if (chp &lt;= 0) {
 room_goto_next();
 }
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_set_colour(c_red);
+draw_text(view_xview + 16,view_yview + 16,"kills =" + string(kills));
+draw_text(view_xview + 16,view_yview + 32,"hp =" + string(chp));
+
 
 </string>
           </argument>
