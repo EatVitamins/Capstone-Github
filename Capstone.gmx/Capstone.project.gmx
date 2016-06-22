@@ -10,21 +10,24 @@
     <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_cursor</sprite>
+    <sprite>sprites\spr_die</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_1</background>
     <background>background\bg_menu</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_lazer</object>
     <object>objects\obj_char</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_cursor</object>
+    <object>objects\obj_die</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_menu</room>
     <room>rooms\rm_1</room>
+    <room>rooms\rm_die</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

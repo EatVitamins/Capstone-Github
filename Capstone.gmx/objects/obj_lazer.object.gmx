@@ -52,7 +52,7 @@ direction = point_direction(x,y,mouse_x,mouse_y);
             <kind>1</kind>
             <string>image_angle = direction;
 
-hit = instance_place(x,y,obj_enemy) 
+hit = instance_place(x,y,obj_enemy);
 
 if (hit != noone){
 hit.hp -= 1;
