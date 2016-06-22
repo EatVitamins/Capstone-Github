@@ -25,6 +25,7 @@
     <object>objects\obj_cursor</object>
     <object>objects\obj_die</object>
     <object>objects\obj_fireball</object>
+    <object>objects\obj_reset</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
