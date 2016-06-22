@@ -47,6 +47,7 @@
             <kind>1</kind>
             <string>chp = 10;
 kills = 0;
+audio_play_sound(sd_title,1,true)
 </string>
           </argument>
         </arguments>
