@@ -9,6 +9,7 @@
     <sprite>sprites\spr_lazer</sprite>
     <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_cursor</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_1</background>
@@ -16,8 +17,9 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_lazer</object>
-    <object>objects\obj_smile</object>
+    <object>objects\obj_char</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_cursor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
