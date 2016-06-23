@@ -45,13 +45,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//stats
+            <string>image_speed = 0;
+//stats
 chp = 10;
 kills = 0;
 //sound
-if (room = rm_1) {
 audio_play_sound(sd_title,1,true);
-}
+
 //minimap
 mheight = 100
 mwidth = 100
@@ -103,31 +103,9 @@ mscale_x = mwidth/room_width;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(random(room_width),random(room_height),obj_enemy);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(obj_char.x,obj_char.y,obj_lazer);
-
+            <string>if(instance_number(obj_enemy ) &lt;= 9) {
+instance_create(random(room_width),random(room_height),obj_enemy);
+}
 </string>
           </argument>
         </arguments>
@@ -162,9 +140,7 @@ y = max(y,16);
 
 //shooting
 if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(vk_space)) {
-if alarm[0] = -1 {
-alarm[0] = 5
-}
+instance_create(obj_char.x,obj_char.y,obj_lazer);
 };
 //ability
 if (mouse_check_button_pressed(mb_right) || keyboard_check_pressed(vk_control)) {
@@ -201,12 +177,13 @@ vspeed += 1;
 vspeed += 2
 }
 };
-
+//enemy spawn
 if (alarm[1] = -1) {
  alarm[1] = 60*2
 };
 //health
 if (chp &lt;= 0) {
+audio_stop_all();
 room_goto_next();
 }
 
@@ -234,13 +211,14 @@ room_goto_next();
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_set_colour(c_green);
+draw_set_colour(c_red);
 draw_text(view_xview + 16,view_yview + 16,"kills =" + string(kills));
 draw_text(view_xview + 16,view_yview + 32,"hp =" + string(chp));
 // minimap
-mx = view_xview + 100;
-my = view_yview;
+mx = view_xview + 390;
+my = view_yview + 10;
 draw_set_alpha(0.3);
+draw_set_colour(c_green)
 draw_rectangle(mx ,my ,mx + mwidth,my + mheight,false);
     //enemis on map
 
@@ -255,7 +233,7 @@ for(i = 0; i &lt; enemycount; i += 1) {
     draw_circle(e_x,e_y,2,false);
 };
 cmapx = mx + obj_char.x*mscale_x;
-cmapy = my + obj_char.x*mscale_y;
+cmapy = my + obj_char.y*mscale_y;
 draw_set_colour(c_aqua)
 draw_circle(cmapx,cmapy,3,false);
 

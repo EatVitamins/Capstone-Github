@@ -6,14 +6,18 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\sd_title</sound>
+    <sound>sound\sd_die</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_lazer</sprite>
-    <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_die</sprite>
     <sprite>sprites\spr_fireball</sprite>
+    <sprites name="grp_spr_char">
+      <sprite>sprites\spr_head</sprite>
+      <sprite>sprites\spr_char</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_1</background>
@@ -22,12 +26,15 @@
   <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\obj_lazer</object>
-    <object>objects\obj_char</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_cursor</object>
     <object>objects\obj_die</object>
     <object>objects\obj_fireball</object>
     <object>objects\obj_reset</object>
+    <objects name="grp_obj_char">
+      <object>objects\obj_char</object>
+      <object>objects\obj_head</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
