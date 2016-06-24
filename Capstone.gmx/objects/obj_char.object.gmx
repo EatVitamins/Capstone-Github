@@ -111,6 +111,29 @@ instance_create(random(room_width),random(room_height),obj_enemy);
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//timing
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -128,7 +151,20 @@ instance_create(random(room_width),random(room_height),obj_enemy);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(speed &gt;= 4){
+            <string>//body position following the mouse
+if ( 90 &lt;= point_direction(x,y,mouse_x,mouse_y)) {
+    if (270 &gt;= point_direction(x,y,mouse_x,mouse_y)) {
+image_xscale = -1;
+}
+else {
+image_xscale = 1;
+} 
+}
+else {
+image_xscale = 1;
+};
+
+if(speed &gt;= 4){
 speed = 4
 };
 
@@ -140,10 +176,16 @@ y = max(y,16);
 
 //shooting
 if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(vk_space)) {
+instance_create(obj_char.x,obj_char.y,obj_arrow);
+};
+if (mouse_check_button_pressed(mb_right) || keyboard_check_pressed(vk_alt)) {
+if alarm[0] = -1 {
 instance_create(obj_char.x,obj_char.y,obj_lazer);
+alarm[0] = 60;
+}
 };
 //ability
-if (mouse_check_button_pressed(mb_right) || keyboard_check_pressed(vk_control)) {
+if (mouse_check_button_pressed(mb_middle) || keyboard_check_pressed(vk_control)) {
 if alarm[2] = -1 {
 instance_create(obj_char.x,obj_char.y,obj_fireball);
 alarm[2] = 60*5;
@@ -159,14 +201,14 @@ vspeed -= 2
 };
 if (keyboard_check(vk_left) || keyboard_check(ord('A'))) {
 hspeed -= 1;
-image_xscale = -1
+//image_xscale = -1
     if (keyboard_check(vk_shift)) {
 hspeed -= 2
 }
 };
 if (keyboard_check(vk_right) || keyboard_check(ord('D'))) {
 hspeed += 1;
-image_xscale = 1;
+//image_xscale = 1;
     if (keyboard_check(vk_shift)) {
 hspeed += 2
 }
@@ -184,7 +226,11 @@ if (alarm[1] = -1) {
 //health
 if (chp &lt;= 0) {
 audio_stop_all();
-room_goto_next();
+room_goto(rm_die);
+}
+//kill check
+if (kills &gt;= 50) {
+room_goto(rm_die);
 }
 
 
@@ -214,6 +260,7 @@ room_goto_next();
 draw_set_colour(c_red);
 draw_text(view_xview + 16,view_yview + 16,"kills =" + string(kills));
 draw_text(view_xview + 16,view_yview + 32,"hp =" + string(chp));
+draw_text(view_xview + 16,view_yview + 64,"pointer =" + string(point_direction(x,y,mouse_x,mouse_y)));
 // minimap
 mx = view_xview + 390;
 my = view_yview + 10;

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>speed = 3;
 direction = point_direction(x,y,mouse_x,mouse_y);
+audio_play_sound(sd_fireball,2,false);
 </string>
           </argument>
         </arguments>
