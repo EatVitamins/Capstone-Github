@@ -47,7 +47,12 @@
             <kind>1</kind>
             <string>image_speed = 0;
 //stats
-chp = 10;
+if (room = rm_1) {
+chp = 10
+}
+else if (room = rm_boss) {
+chp = 1;
+};
 kills = 0;
 //sound
 audio_play_sound(sd_title,1,true);
@@ -103,8 +108,10 @@ mscale_x = mwidth/room_width;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_number(obj_enemy ) &lt;= 9) {
+            <string>if (room = rm_1){
+if(instance_number(obj_enemy ) &lt;= 9) {
 instance_create(random(room_width),random(room_height),obj_enemy);
+}
 }
 </string>
           </argument>
@@ -188,7 +195,12 @@ alarm[0] = 60;
 if (mouse_check_button_pressed(mb_middle) || keyboard_check_pressed(vk_control)) {
 if alarm[2] = -1 {
 instance_create(obj_char.x,obj_char.y,obj_fireball);
+if (room = rm_1){
 alarm[2] = 60*5;
+}
+else if (room = rm_boss){
+alarm[2] = 60
+}
 }
 };
 
@@ -219,20 +231,22 @@ vspeed += 1;
 vspeed += 2
 }
 };
-//enemy spawn
-if (alarm[1] = -1) {
- alarm[1] = 60*2
-};
+
 //health
 if (chp &lt;= 0) {
 audio_stop_all();
 room_goto(rm_die);
 }
+if (room = rm_1) {
+//enemy spawn
+if (alarm[1] = -1) {
+ alarm[1] = 60*2
+};
 //kill check
-if (kills &gt;= 50) {
-room_goto(rm_die);
+if (kills &gt;= 20) {
+room_goto(rm_boss);
 }
-
+}
 
 </string>
           </argument>

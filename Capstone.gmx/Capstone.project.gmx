@@ -16,14 +16,14 @@
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_die</sprite>
+    <sprite>sprites\spr_char</sprite>
     <sprite>sprites\spr_fireball</sprite>
-    <sprites name="grp_spr_char">
-      <sprite>sprites\spr_head</sprite>
-      <sprite>sprites\spr_char</sprite>
-    </sprites>
+    <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_battack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_1</background>
+    <background>background\bg_sand</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -34,13 +34,13 @@
     <object>objects\obj_die</object>
     <object>objects\obj_fireball</object>
     <object>objects\obj_reset</object>
-    <objects name="grp_obj_char">
-      <object>objects\obj_char</object>
-      <object>objects\obj_head</object>
-    </objects>
+    <object>objects\obj_char</object>
+    <object>objects\obj_boss</object>
+    <object>objects\obj_battack</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
+    <room>rooms\rm_boss</room>
     <room>rooms\rm_die</room>
   </rooms>
   <help>

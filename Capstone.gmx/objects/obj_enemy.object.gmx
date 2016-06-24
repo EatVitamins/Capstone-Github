@@ -75,7 +75,7 @@
 image_angle = point_direction(x,y,obj_char.x,obj_char.y);
 direction = image_angle;
 
-if (instance_number(obj_enemy) &gt; 10) {
+if (instance_number(obj_enemy) &gt;= 9 ) {
 instance_destroy();
 }
 
