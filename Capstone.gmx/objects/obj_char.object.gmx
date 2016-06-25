@@ -226,7 +226,7 @@ if (room = rm_1){
 alarm[2] = 60*5;
 }
 else if (room = rm_boss){
-alarm[2] = 60*2
+alarm[2] = 60*2;
 }
 }
 };
