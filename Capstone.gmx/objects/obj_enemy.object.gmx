@@ -72,8 +72,7 @@
           <argument>
             <kind>1</kind>
             <string>speed = 4;
-image_angle = point_direction(x,y,obj_char.x,obj_char.y);
-direction = image_angle;
+direction = point_direction(x,y,obj_char.x,obj_char.y);
 
 if (instance_number(obj_enemy) &gt;= 9 ) {
 instance_destroy();

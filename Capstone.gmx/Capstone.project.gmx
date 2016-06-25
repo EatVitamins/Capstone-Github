@@ -9,6 +9,9 @@
     <sound>sound\sd_die</sound>
     <sound>sound\sd_fireball</sound>
     <sound>sound\sd_arrowf</sound>
+    <sound>sound\sd_parrow</sound>
+    <sound>sound\sd_boss</sound>
+    <sound>sound\sd_arena</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_lazer</sprite>

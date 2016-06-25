@@ -52,11 +52,13 @@ chp = 10
 }
 else if (room = rm_boss) {
 chp = 1;
+audio_play_sound(sd_boss,1,true);
 };
 kills = 0;
 //sound
-audio_play_sound(sd_title,1,true);
-
+if(room = rm_1){
+audio_play_sound(sd_arena,1,true)
+}
 //minimap
 mheight = 100
 mwidth = 100
@@ -343,6 +345,9 @@ cmapx = mx + obj_char.x*mscale_x;
 cmapy = my + obj_char.y*mscale_y;
 draw_set_colour(c_aqua)
 draw_circle(cmapx,cmapy,3,false);
+if (room = rm_boss) {
+draw_text(view_xview + 16,view_yview + 96,"boss hp =" + string(obj_boss.hp));
+}
 
 </string>
           </argument>
