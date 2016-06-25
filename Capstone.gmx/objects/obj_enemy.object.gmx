@@ -83,14 +83,40 @@ obj_char.kills += 1;
 instance_destroy();
 ;
 }
-
+if (instance_number(obj_shield) &lt; 1){
 touch = instance_place(x,y,obj_char);
 
 if (touch != noone){
     if alarm[1] = -1 {
     alarm[1] = 10;
  }
+ }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_set_colour(c_red);
+draw_rectangle(x - 5,y - 8, x - 5 + hp*2,y - 6,false)
 </string>
           </argument>
         </arguments>

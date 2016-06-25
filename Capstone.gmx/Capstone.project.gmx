@@ -23,6 +23,8 @@
     <sprite>sprites\spr_fireball</sprite>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_battack</sprite>
+    <sprite>sprites\spr_health</sprite>
+    <sprite>sprites\spr_shield</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_1</background>
@@ -40,6 +42,7 @@
     <object>objects\obj_char</object>
     <object>objects\obj_boss</object>
     <object>objects\obj_battack</object>
+    <object>objects\obj_shield</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
