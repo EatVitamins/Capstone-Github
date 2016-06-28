@@ -31,6 +31,7 @@
     <background>background\bg_1</background>
     <background>background\bg_sand</background>
     <background>background\bg_win</background>
+    <background>background\bg_temp_start</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">

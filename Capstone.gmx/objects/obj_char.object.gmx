@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>0.3</string>
+            <string>0.5</string>
           </argument>
         </arguments>
       </action>
@@ -183,6 +183,31 @@ instance_create(random(room_width),random(room_height),obj_enemy);
           <argument>
             <kind>1</kind>
             <string>//body position following the mouse
+if (90 &lt;= point_direction(x,y,mouse_x,mouse_y)) {
+    if (180 &gt;= point_direction(x,y,mouse_x,mouse_y)) {
+    image_index = 2;
+    image_xscale = -1;
+    }
+    if (180 &lt;= point_direction(x,y,mouse_x,mouse_y)) {
+        if (270 &gt;= point_direction(x,y,mouse_x,mouse_y)) {
+    image_index = 1;
+    image_xscale = -1;
+    }
+    }
+    if (270 &lt;= point_direction(x,y,mouse_x,mouse_y)){
+        if (360 &gt;= point_direction(x,y,mouse_x,mouse_y)) {
+        image_index = 1;
+        image_xscale = 1
+        }
+        }
+} 
+else {
+    image_index = 2;
+    image_xscale = 1
+}
+
+
+/*
 if ( 90 &lt;= point_direction(x,y,mouse_x,mouse_y)) {
     if (270 &gt;= point_direction(x,y,mouse_x,mouse_y)) {
 image_xscale = -1;
@@ -190,10 +215,7 @@ image_xscale = -1;
 else {
 image_xscale = 1;
 } 
-}
-else {
-image_xscale = 1;
-};
+}*/
 
 if(speed &gt;= 4){
 speed = 4
@@ -271,6 +293,7 @@ if (alarm[1] = -1) {
 };
 //kill check
 if (kills &gt;= 20) {
+audio_stop_all();
 room_goto(rm_boss);
 }
 }
@@ -331,9 +354,7 @@ cmapx = mx + obj_char.x*mscale_x;
 cmapy = my + obj_char.y*mscale_y;
 draw_set_colour(c_aqua)
 draw_circle(cmapx,cmapy,3,false);
-if (room = rm_boss) {
-draw_text(view_xview + 16,view_yview + 96,"boss hp =" + string(obj_boss.hp));
-}
+
 
 </string>
           </argument>
